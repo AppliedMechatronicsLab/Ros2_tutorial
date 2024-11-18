@@ -1,9 +1,0 @@
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/uninstall.dir
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/launch_tutorial_uninstall.dir
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/test.dir
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/edit_cache.dir
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/rebuild_cache.dir
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/list_install_components.dir
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/install.dir
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/install/local.dir
-/home/son6966/Desktop/AML/Ros2_tutorial/Launch/Example_Use_Substitution/build/launch_tutorial/CMakeFiles/install/strip.dir
