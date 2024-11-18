@@ -10,3 +10,8 @@ The command syntax for creating a new package in ROS 2 is:
 but in this example, we will use the optional argument --node-name which creates a simple Hello World type executable in the package:
 	ros2 pkg create --build-type ament_cmake --license Apache-2.0 cpp_parameters --dependencies rclcpp
 
+run: 
+	ros2 run cpp_parameters minimal_param_node
+	ros2 param list #check list param
+	ros2 param set /minimal_param_node my_parameter earth #set param
+
