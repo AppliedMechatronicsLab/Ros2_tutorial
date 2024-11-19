@@ -32,6 +32,16 @@ ament_target_dependencies(
     turtlesim
 )
 
+add_executable(turtle_tf2_listener src/turtle_tf2_listener.cpp)
+ament_target_dependencies(
+    turtle_tf2_listener
+    geometry_msgs
+    rclcpp
+    tf2
+    tf2_ros
+    turtlesim
+)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
@@ -54,5 +64,9 @@ install(TARGETS
 
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME})
+
+install(TARGETS
+  turtle_tf2_listener
+  DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

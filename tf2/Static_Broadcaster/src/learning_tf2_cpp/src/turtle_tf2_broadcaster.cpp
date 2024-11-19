@@ -23,6 +23,7 @@
 #include "tf2/LinearMath/Quaternion.h"
 #include "tf2_ros/transform_broadcaster.h"
 #include "turtlesim/msg/pose.hpp"
+#include <stdio.h>
 
 class FramePublisher : public rclcpp::Node
 {
@@ -31,7 +32,7 @@ public:
   : Node("turtle_tf2_frame_publisher")
   {
     // Declare and acquire `turtlename` parameter
-    turtlename_ = this->declare_parameter<std::string>("turtlename", "turtle");
+    turtlename_ = this->declare_parameter<std::string>("turtlename", "turtle1");
 
     // Initialize the transform broadcaster
     tf_broadcaster_ =
@@ -55,26 +56,27 @@ public:
 
         // Turtle only exists in 2D, thus we get x and y translation
         // coordinates from the message and set the z coordinate to 0
-        t.transform.translation.x = msg->x;
-        t.transform.translation.y = msg->y;
-        t.transform.translation.z = 0.0;
+        // t.transform.translation.x = msg->x;
+        // t.transform.translation.y = msg->y;
+        // t.transform.translation.z = 0.0;
 
         auto logger = rclcpp::get_logger("logger");
-        std::cout << "msg->x: " << msg->x << " msg->y: " << msg->y << std::endl;
-        RCLCPP_INFO(logger, "msg->x: %d, msg->y:%d\n", msg->x, msg->y);
+        RCLCPP_INFO(logger, "msg->x: %f, msg->y:%f, theta:%f\n", msg->x, msg->y, msg->theta);
 
-        // For the same reason, turtle can only rotate around one axis
-        // and this why we set rotation in x and y to 0 and obtain
-        // rotation in z axis from the message
-        tf2::Quaternion q;
-        q.setRPY(0, 0, msg->theta);
-        t.transform.rotation.x = q.x();
-        t.transform.rotation.y = q.y();
-        t.transform.rotation.z = q.z();
-        t.transform.rotation.w = q.w();
+        // // For the same reason, turtle can only rotate around one axis
+        // // and this why we set rotation in x and y to 0 and obtain
+        // // rotation in z axis from the message
+        // tf2::Quaternion q;
+        // q.setRPY(0, 0, msg->theta);
+        // t.transform.rotation.x = q.x();
+        // t.transform.rotation.y = q.y();
+        // t.transform.rotation.z = q.z();
+        // t.transform.rotation.w = q.w();
 
-        // Send the transformation
-        tf_broadcaster_->sendTransform(t);
+        // RCLCPP_INFO(logger, "t.transform.rotation.x: %d, y:%d, z: %d, w: %f\n", t.transform.rotation.x, t.transform.rotation.y, t.transform.rotation.z, t.transform.rotation.w);
+
+        // // Send the transformation
+        // tf_broadcaster_->sendTransform(t);
       };
     subscription_ = this->create_subscription<turtlesim::msg::Pose>(
       topic_name, 10,
