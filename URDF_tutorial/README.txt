@@ -8,3 +8,5 @@ sudo apt install ros-humble-urdf-tutorial
 
 run:
 ros2 launch urdf_tutorial display.launch.py model:=urdf/07-physics.urdf
+
+ros2 launch urdf_tutorial display.launch.py model:=urdf/08-macroed.urdf.xacro
